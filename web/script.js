@@ -7,3 +7,9 @@ const cuerpoTabla = document.getElementById("tabla-registros");
 
 // Variable de estado: número de clics realizados
 let likes = 0;
+
+// 2. Escuchar el evento 'click' y manipular el DOM
+boton.addEventListener("click", () => {
+  likes++;
+  textoContador.textContent = likes; // Actualizamos el DOM directamente
+});
