@@ -17,6 +17,19 @@ function obtenerHora() {
   return `${hh}:${mm}:${ss}`;
 }
 
+// Reto 2: cambia el color si los likes superan 10
+function actualizarColor() {
+  const alto = likes > 10;
+  textoContador.classList.toggle("alto", alto);
+  document.body.classList.toggle("fondo-alto", alto);
+}
+
+// Actualiza el contador en el DOM
+function actualizarContador() {
+  textoContador.textContent = likes;
+  actualizarColor();
+}
+
 // Inserta una fila al inicio del tbody (los más recientes arriba)
 function agregarFila(numero, hora) {
   const fila = document.createElement("tr");
@@ -35,7 +48,7 @@ function agregarFila(numero, hora) {
 // 2. Escuchar el evento 'click' y manipular el DOM
 boton.addEventListener("click", () => {
   likes++;
-  textoContador.textContent = likes;
+  actualizarContador();
   agregarFila(likes, obtenerHora());
 });
 
@@ -43,7 +56,7 @@ boton.addEventListener("click", () => {
 botonRestar.addEventListener("click", () => {
   if (likes > 0) {
     likes--;
-    textoContador.textContent = likes;
+    actualizarContador();
     if (cuerpoTabla.firstChild) {
       cuerpoTabla.removeChild(cuerpoTabla.firstChild);
     }
@@ -53,6 +66,6 @@ botonRestar.addEventListener("click", () => {
 // Reto 1b: reiniciar a cero
 botonReiniciar.addEventListener("click", () => {
   likes = 0;
-  textoContador.textContent = likes;
+  actualizarContador();
   cuerpoTabla.innerHTML = "";
 });
