@@ -38,3 +38,21 @@ boton.addEventListener("click", () => {
   textoContador.textContent = likes;
   agregarFila(likes, obtenerHora());
 });
+
+// Reto 1a: restar like (no baja de 0)
+botonRestar.addEventListener("click", () => {
+  if (likes > 0) {
+    likes--;
+    textoContador.textContent = likes;
+    if (cuerpoTabla.firstChild) {
+      cuerpoTabla.removeChild(cuerpoTabla.firstChild);
+    }
+  }
+});
+
+// Reto 1b: reiniciar a cero
+botonReiniciar.addEventListener("click", () => {
+  likes = 0;
+  textoContador.textContent = likes;
+  cuerpoTabla.innerHTML = "";
+});
