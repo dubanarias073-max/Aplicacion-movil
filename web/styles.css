@@ -35,3 +35,78 @@ h1 {
   font-size: 14px;
   color: #7f8c8d;
 }
+
+.contador {
+  font-size: 64px;
+  font-weight: 800;
+  color: #3498db;
+  margin: 8px 0 16px;
+  transition: color 0.3s ease;
+}
+
+/* Reto 2: cuando los clics superan 10 */
+.contador.alto {
+  color: #e74c3c;
+}
+
+body.fondo-alto {
+  background-color: #fdecea;
+}
+
+.botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 22px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-clic { background-color: #2ecc71; }
+.btn-restar { background-color: #f39c12; }
+.btn-reiniciar { background-color: #95a5a6; }
+
+.tabla {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #e3e8ea;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabla th,
+.tabla td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e3e8ea;
+}
+
+.tabla thead th {
+  background-color: #f6f8f9;
+  color: #7f8c8d;
+  font-weight: 600;
+}
+
+.tabla tbody tr:nth-child(even) {
+  background-color: #fafbfb;
+}
